@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Nama aplikasi -->
+    <string name="app_name">Chitato Lite Project</string>
+
+    <!-- Main Activity -->
+    <string name="main_title">MY SNACK PROJECT</string>
+    <string name="main_subtitle">Kenali snack favoritmu</string>
+    <string name="my_project">MY PROJECT</string>
+
+    <!-- Third Activity -->
+    <string name="project_title">Chitato Lite Rumput Laut</string>
+    <string name="project_subtitle">Keripik kentang renyah dengan cita rasa rumput laut</string>
+
+    <string name="project_description">
+        Chitato Lite Rumput Laut merupakan makanan ringan
+        berbahan dasar kentang dengan perpaduan cita rasa
+        rumput laut yang gurih dan renyah.
+    </string>
+
+    <!-- Informasi Gizi -->
+    <string name="nutrition_title">INFORMASI NILAI GIZI</string>
+    <string name="serving_size">Takaran saji: 20 g</string>
+
+    <string name="energy">Energi</string>
+    <string name="energy_value">110 kkal</string>
+
+    <string name="fat">Lemak Total</string>
+    <string name="fat_value">6 g</string>
+
+    <string name="carbohydrate">Karbohidrat</string>
+    <string name="carbohydrate_value">11 g</string>
+
+    <string name="protein">Protein</string>
+    <string name="protein_value">1 g</string>
+
+    <string name="sugar">Gula</string>
+    <string name="sugar_value">1 g</string>
+
+    <string name="salt">Garam</string>
+    <string name="salt_value">85 mg</string>
+
+    <!-- Komposisi -->
+    <string name="ingredients_title">KOMPOSISI</string>
+
+    <string name="ingredients">
+        Kentang, minyak kelapa sawit, bumbu,
+        bubuk rumput laut, gula, garam, dan bahan
+        lainnya sesuai formulasi produk.
+    </string>
+
+    <!-- Tombol -->
+    <string name="back">Kembali</string>
+
+    <!-- Accessibility -->
+    <string name="chitato_image_description">
+        Gambar Chitato Lite Rumput Laut
+    </string>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Warna dasar -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Warna utama project Chitato -->
+    <color name="snack_green">#1B5E20</color>
+    <color name="snack_green_light">#8BC34A</color>
+    <color name="snack_yellow">#F9A825</color>
+
+    <!-- Warna tampilan -->
+    <color name="snack_background">#F5F8F0</color>
+    <color name="snack_card">#FFFFFFFF</color>
+
+    <!-- Warna teks -->
+    <color name="snack_text">#263238</color>
+    <color name="snack_secondary">#607D6B</color>
+
+</resources>
