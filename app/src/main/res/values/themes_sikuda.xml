@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema aplikasi SIKUDA (palet resmi + font Poppins) -->
+    <style name="Theme.Sikuda" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/hijau_sawit</item>
+        <item name="colorOnPrimary">@color/putih</item>
+        <item name="colorPrimaryContainer">@color/hijau_soft</item>
+        <item name="colorSecondary">@color/oranye_tandan</item>
+        <item name="colorOnSecondary">@color/putih</item>
+        <item name="colorError">@color/bahaya</item>
+        <item name="android:colorBackground">@color/latar</item>
+        <item name="android:windowBackground">@color/latar</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="materialButtonStyle">@style/Widget.Sikuda.Button</item>
+    </style>
+
+    <!-- Tombol utama: oranye -->
+    <style name="Widget.Sikuda.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/oranye_tandan</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="iconTint">@color/putih</item>
+    </style>
+
+    <!-- Tombol garis putih (di atas foto) -->
+    <style name="Widget.Sikuda.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/putih_80</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="iconTint">@color/putih</item>
+    </style>
+
+    <!-- Tombol garis oranye (di atas latar terang) -->
+    <style name="Widget.Sikuda.Button.OutlineOranye" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/oranye_tandan</item>
+        <item name="android:textColor">@color/oranye_tandan</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="iconTint">@color/oranye_tandan</item>
+    </style>
+
+    <!-- Tombol kaca transparan (di atas foto) -->
+    <style name="Widget.Sikuda.Button.Kaca" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/putih_20</item>
+        <item name="strokeColor">#66FFFFFF</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="iconTint">@color/putih</item>
+        <item name="iconSize">18dp</item>
+    </style>
+
+    <style name="TextAppearance.Sikuda.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/putih</item>
+    </style>
+
+    <style name="TextAppearance.Sikuda.ToolbarSubtitle" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/putih_80</item>
+    </style>
+</resources>

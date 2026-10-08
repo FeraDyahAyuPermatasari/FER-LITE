@@ -1,4 +1,4 @@
-package com.example.`fera-lite`
+package com.example.fera_lite
 
 import org.junit.Test
 

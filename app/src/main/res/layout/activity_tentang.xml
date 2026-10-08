@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/latar"
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/hijau_sawit"
+    tools:context=".sikuda.guest.tentang.TentangActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hijau_sawit"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hijau_sawit"
+            app:subtitleTextAppearance="@style/TextAppearance.Sikuda.ToolbarSubtitle"
+            app:subtitleTextColor="@color/putih_80"
+            app:titleTextAppearance="@style/TextAppearance.Sikuda.ToolbarTitle"
+            app:titleTextColor="@color/putih"
+            app:layout_scrollFlags="scroll|enterAlways" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Konten scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="72dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_foto_sawit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/foto_sawit_udara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_overlay_hijau" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="48dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_profil"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/putih"
+                        android:letterSpacing="0.12"
+                        android:layout_marginBottom="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/judul_tentang_kud"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/putih" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tentang_hero_sub"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/putih_80"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingMultiplier="1.45" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="-32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tentang_p1"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/teks_utama"
+                            android:lineSpacingMultiplier="1.45" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="16dp"
+                            android:background="@color/garis" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tentang_p2"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/teks_utama"
+                            android:lineSpacingMultiplier="1.45" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTentangMasuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/masuk_ke_sistem"
+                    app:icon="@drawable/ic_arrow_right"
+                    android:layout_marginTop="24dp"
+                    app:iconGravity="textEnd" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

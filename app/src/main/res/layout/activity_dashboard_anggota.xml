@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/latar"
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/hijau_sawit"
+    tools:context=".sikuda.anggota.dashboard.DashboardAnggotaActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hijau_sawit"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hijau_sawit"
+            app:subtitleTextAppearance="@style/TextAppearance.Sikuda.ToolbarSubtitle"
+            app:subtitleTextColor="@color/putih_80"
+            app:titleTextAppearance="@style/TextAppearance.Sikuda.ToolbarTitle"
+            app:titleTextColor="@color/putih"
+            app:layout_scrollFlags="scroll|enterAlways" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Konten scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="72dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_foto_sawit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/foto_sawit_udara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_overlay_hijau" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="46dp">
+
+                    <TextView
+                        android:id="@+id/txtSapaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sapaan_default"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/putih" />
+
+                    <TextView
+                        android:id="@+id/txtPeran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/peran_anggota"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/putih_80"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingMultiplier="1.45" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="-30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipChildren="false"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/total_anggota"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="@color/teks_muted" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/total_anggota_nilai"
+                                    android:textSize="30sp"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:textColor="@color/hijau_sawit" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_ikon_hijau">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="center"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_users"
+                                    app:tint="@color/hijau_sawit" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="14dp"
+                            android:background="@drawable/bg_track"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="88"
+                                android:background="@drawable/bg_bar_hijau" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="11"
+                                android:background="@drawable/bg_bar_emas" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_merah" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/komposisi_anggota"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/teks_muted"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/putih"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/garis"
+                        app:strokeWidth="1dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <FrameLayout
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:background="@drawable/bg_ikon_hijau">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_user_plus"
+                                    app:tint="@color/hijau_sawit" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/anggota_baru_nilai"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/anggota_baru"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/putih"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/garis"
+                        app:strokeWidth="1dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <FrameLayout
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:background="@drawable/bg_ikon_oranye">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_clock"
+                                    app:tint="@color/oranye_tandan" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menunggu_nilai"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/oranye_tandan"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menunggu_verifikasi"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_cepat"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/teks_utama"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:gravity="top"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/menuInputCalon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_ikon_oranye">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_user_plus"
+                                app:tint="@color/oranye_tandan" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_input_calon"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/teks_utama"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuVerifikasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_verifikasi"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/teks_utama"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuDataAnggota"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_ikon_emas">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_users"
+                                app:tint="@color/emas_minyak" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_data_anggota"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/teks_utama"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuSimpanan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_wallet"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_simpanan"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/teks_utama"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipChildren="false"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pertumbuhan_anggota"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/teks_utama"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/periode_12_bulan"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="12dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="62dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="70dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="76dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="82dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="72dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_hijau" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="90dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_bar_oranye" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipChildren="false"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_jul"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_sep"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_nov"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_jan"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_mar"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bln_jun"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    style="@style/Widget.Sikuda.Button.OutlineOranye"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/keluar_akun"
+                    app:icon="@drawable/ic_logout"
+                    app:iconGravity="textStart"
+                    android:layout_marginTop="28dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

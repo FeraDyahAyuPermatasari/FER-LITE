@@ -1,4 +1,4 @@
-package com.example.`fera-lite`
+package com.example.fera_lite
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

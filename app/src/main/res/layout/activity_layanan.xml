@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/latar"
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/hijau_sawit"
+    tools:context=".sikuda.guest.layanan.LayananActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hijau_sawit"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hijau_sawit"
+            app:subtitleTextAppearance="@style/TextAppearance.Sikuda.ToolbarSubtitle"
+            app:subtitleTextColor="@color/putih_80"
+            app:titleTextAppearance="@style/TextAppearance.Sikuda.ToolbarTitle"
+            app:titleTextColor="@color/putih"
+            app:layout_scrollFlags="scroll|enterAlways" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Konten scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="72dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_foto_sawit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/foto_kebun_sawit" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_overlay_hijau" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="48dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_modul"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/putih"
+                        android:letterSpacing="0.12"
+                        android:layout_marginBottom="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/judul_layanan"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/putih" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/subjudul_layanan"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/putih_80"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingMultiplier="1.45" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="-32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <FrameLayout
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_wallet"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_kas_harian"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_kas_harian_desc"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="3dp"
+                                android:lineSpacingMultiplier="1.45" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomor_1"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/oranye_tandan"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <FrameLayout
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_cart"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_pembelian"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_pembelian_desc"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="3dp"
+                                android:lineSpacingMultiplier="1.45" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomor_2"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/oranye_tandan"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <FrameLayout
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_scale"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_penjualan_tbs"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_penjualan_tbs_desc"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="3dp"
+                                android:lineSpacingMultiplier="1.45" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomor_3"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/oranye_tandan"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <FrameLayout
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_send"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_penyaluran_dana"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_penyaluran_dana_desc"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="3dp"
+                                android:lineSpacingMultiplier="1.45" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomor_4"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/oranye_tandan"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/putih"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/garis"
+                    app:strokeWidth="1dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <FrameLayout
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_ikon_hijau">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_file"
+                                app:tint="@color/hijau_sawit" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_laporan_periodik"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/teks_utama" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/layanan_laporan_periodik_desc"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/teks_muted"
+                                android:layout_marginTop="3dp"
+                                android:lineSpacingMultiplier="1.45" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomor_5"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/oranye_tandan"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLayananMasuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/masuk_ke_sistem"
+                    app:icon="@drawable/ic_arrow_right"
+                    android:layout_marginTop="24dp"
+                    app:iconGravity="textEnd" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

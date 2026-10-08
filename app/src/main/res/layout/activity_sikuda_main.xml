@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau_tua"
+    tools:context=".sikuda.guest.beranda.MainActivity">
+
+    <!-- Foto lahan sawit sebagai latar -->
+    <ImageView
+        android:id="@+id/imgLatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_foto_sawit"
+        android:scaleType="centerCrop"
+        android:src="@drawable/foto_sawit_jalan_setapak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Lapisan hijau: makin bawah makin gelap -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_overlay_beranda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/kontenBeranda"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Baris atas: logo + nama KUD + tombol Masuk -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_logo_bulat"
+                android:padding="6dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_logo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo_sikuda" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama_kud"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/putih" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama_aplikasi"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/putih_80"
+                    android:letterSpacing="0.15" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNavMasuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:minHeight="40dp"
+                android:paddingHorizontal="18dp"
+                android:text="@string/masuk"
+                android:textSize="13sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_koperasi"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/putih"
+            android:background="@drawable/bg_chip_gelap"
+            android:letterSpacing="0.1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/judul_beranda"
+            android:textSize="32sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/putih"
+            android:layout_marginTop="14dp"
+            android:lineSpacingMultiplier="1.1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deskripsi_beranda"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/putih_80"
+            android:layout_marginTop="12dp"
+            android:lineSpacingMultiplier="1.45" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMasukSistem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/masuk_ke_sistem"
+            app:icon="@drawable/ic_arrow_right"
+            app:iconGravity="textEnd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTentang"
+                style="@style/Widget.Sikuda.Button.Kaca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menu_tentang"
+                app:icon="@drawable/ic_info"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPelajariLayanan"
+                style="@style/Widget.Sikuda.Button.Kaca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/menu_layanan"
+                app:icon="@drawable/ic_file"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+
+        <!-- Kartu berita (membuka WebView) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBeritaKud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/putih"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_ikon_oranye">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_web"
+                        app:tint="@color/oranye_tandan" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/berita_kud_sawit"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/teks_utama" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/berita_kud_sawit_desc"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/teks_muted"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="@color/oranye_tandan" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

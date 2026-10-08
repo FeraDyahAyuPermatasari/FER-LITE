@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fera-lite"
+    namespace = "com.example.fera_lite"
     compileSdk {
         version = release(37)
     }
@@ -25,6 +25,10 @@ android {
             }
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

@@ -1,4 +1,4 @@
-package com.example.`fera-lite`
+package com.example.fera_lite
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

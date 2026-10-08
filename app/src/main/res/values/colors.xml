@@ -18,4 +18,23 @@
     <color name="snack_text">#263238</color>
     <color name="snack_secondary">#607D6B</color>
 
+
+    <!-- ===== Palet warna SIKUDA ===== -->
+    <color name="hijau_sawit">#1E6438</color>
+    <color name="hijau_tua">#123D24</color>
+    <color name="oranye_tandan">#EE8A1F</color>
+    <color name="emas_minyak">#E6A817</color>
+    <color name="latar">#F5F6F0</color>
+    <color name="bahaya">#D64545</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="teks_utama">#123D24</color>
+    <color name="teks_muted">#9E123D24</color>
+    <color name="garis">#1F123D24</color>
+    <color name="putih_80">#CCFFFFFF</color>
+    <color name="putih_20">#33FFFFFF</color>
+    <color name="hijau_soft">#1A1E6438</color>
+    <color name="oranye_soft">#24EE8A1F</color>
+    <color name="emas_soft">#2EE6A817</color>
+    <color name="merah_soft">#1FD64545</color>
+
 </resources>
