@@ -206,4 +206,38 @@
     <string name="login_berhasil">Login berhasil sebagai %1$s</string>
     <string name="fitur_segera">Fitur %1$s segera hadir</string>
 
+    <!-- ===== [MATERI P6] Splash Screen & Login ===== -->
+    <string name="splash_slogan">Koperasi petani sawit, terkelola rapi dan transparan</string>
+    <string name="splash_versi">KUD Lubuk Karya · Versi 1.0</string>
+    <string name="login_gagal_judul">Login Gagal</string>
+    <string name="login_coba_lagi">Silahkan coba lagi</string>
+
+    <!-- ===== PROFIL DEVELOPER ===== -->
+    <string name="profil_developer">Profil Developer</string>
+    <string name="dev_inisial">FD</string>
+    <string name="dev_nama">Fera Dyah Ayu Permatasari</string>
+    <string name="dev_peran">Mobile Developer · Mahasiswa Semester 5</string>
+    <string name="dev_motto">\"Pelan-pelan, yang penting jadi rapi\"</string>
+    <string name="dev_tentang">Halo! Saya Fera, mahasiswa semester 5 yang sedang belajar pemrograman mobile Android dengan Kotlin. Saya membangun SIKUDA untuk membantu KUD Lubuk Karya mengelola data keanggotaan secara digital.</string>
+    <string name="dev_label_nim">NIM</string>
+    <string name="dev_nim">2455301220</string>
+    <string name="dev_label_prodi">Program Studi</string>
+    <string name="dev_prodi">Teknik Informatika · Kelas 3TIF</string>
+    <string name="dev_label_kampus">Kampus</string>
+    <string name="dev_kampus">Politeknik Caltex Riau</string>
+    <string name="dev_judul_sosmed">Sosial Media</string>
+    <string name="dev_label_github">GitHub</string>
+    <string name="dev_github">github.com/FeraDyahAyuPermatasari</string>
+    <string name="dev_label_email">Email</string>
+    <string name="dev_email">fera24ti@mahasiswa.pcr.ac.id</string>
+    <string name="dev_judul_hobi">Hobi</string>
+    <string name="dev_hobi_1">Desain UI</string>
+    <string name="dev_hobi_2">Membaca</string>
+    <string name="dev_hobi_3">Musik</string>
+    <string name="dev_judul_kekuatan">Kekuatan Terbesar</string>
+    <string name="dev_kekuatan_judul">Teliti &amp; Pantang Menyerah</string>
+    <string name="dev_kekuatan_isi">Saya terbiasa memeriksa detail tampilan dan alur kode sampai benar-benar rapi, dan tidak berhenti mencoba saat menemukan error sampai masalahnya terpecahkan.</string>
+    <string name="dev_judul_palet">Palet Warna</string>
+    <string name="dev_judul_font">Font</string>
+
 </resources>

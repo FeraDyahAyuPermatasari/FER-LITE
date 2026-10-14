@@ -666,6 +666,16 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
+                <!-- Tombol ke halaman Profil Developer -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProfilDeveloper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profil_developer"
+                    app:icon="@drawable/ic_person"
+                    app:iconGravity="textStart"
+                    android:layout_marginTop="28dp" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogout"
                     style="@style/Widget.Sikuda.Button.OutlineOranye"
@@ -674,7 +684,7 @@
                     android:text="@string/keluar_akun"
                     app:icon="@drawable/ic_logout"
                     app:iconGravity="textStart"
-                    android:layout_marginTop="28dp" />
+                    android:layout_marginTop="12dp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

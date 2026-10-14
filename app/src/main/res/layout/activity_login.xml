@@ -278,8 +278,10 @@
                         android:gravity="center"
                         android:paddingVertical="8dp" />
 
+                    <!-- Role keuangan & pemilik disembunyikan: fokus hanya Admin Keanggotaan -->
                     <TextView
                         android:id="@+id/chipKeuangan"
+                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/demo_keuangan"
@@ -296,6 +298,7 @@
 
                     <TextView
                         android:id="@+id/chipPemilik"
+                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/demo_pemilik"

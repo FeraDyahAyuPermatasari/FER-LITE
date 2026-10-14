@@ -24,9 +24,9 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <!-- ===================== SIKUDA ===================== -->
-        <!-- Guest: Beranda (halaman awal aplikasi) -->
+        <!-- [MATERI P6 - SPLASH SCREEN] SplashScreenActivity dijadikan halaman utama (LAUNCHER) -->
         <activity
-            android:name=".sikuda.guest.beranda.MainActivity"
+            android:name=".sikuda.splash.SplashScreenActivity"
             android:exported="true"
             android:label="@string/nama_aplikasi"
             android:theme="@style/Theme.Sikuda">
@@ -36,6 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Guest: Beranda (dibuka dari Splash jika isLogin = false, dan setelah Logout) -->
+        <activity
+            android:name=".sikuda.guest.beranda.MainActivity"
+            android:exported="false"
+            android:label="@string/nama_aplikasi"
+            android:theme="@style/Theme.Sikuda" />
         <activity
             android:name=".sikuda.guest.tentang.TentangActivity"
             android:exported="false"
@@ -59,6 +65,11 @@
             android:theme="@style/Theme.Sikuda" />
         <activity
             android:name=".sikuda.pemilik.dashboard.DashboardPemilikActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda" />
+        <!-- Profil Developer -->
+        <activity
+            android:name=".sikuda.profil.ProfilDeveloperActivity"
             android:exported="false"
             android:theme="@style/Theme.Sikuda" />
         <activity

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [MATERI P6 - SPLASH SCREEN] Langkah 2: desain activity_splash_screen.xml
+     - warna background, 1 ImageView logo di tengah, identitas nama/slogan/versi -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau_sawit"
+    tools:context=".sikuda.splash.SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/imgLogoSplash"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_logo_bulat"
+        android:contentDescription="@string/desc_logo"
+        android:padding="22dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_sikuda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <TextView
+        android:id="@+id/txtNamaSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.08"
+        android:text="@string/nama_aplikasi"
+        android:textColor="@color/putih"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoSplash" />
+
+    <TextView
+        android:id="@+id/txtSloganSplash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="@string/splash_slogan"
+        android:textColor="@color/putih_80"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtNamaSplash" />
+
+    <ProgressBar
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="28dp"
+        android:indeterminateTint="@color/oranye_tandan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSloganSplash" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/splash_versi"
+        android:textColor="@color/putih_80"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

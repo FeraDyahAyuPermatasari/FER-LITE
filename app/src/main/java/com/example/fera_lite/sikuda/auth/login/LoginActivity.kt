@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fera_lite.R
 import com.example.fera_lite.databinding.ActivityLoginBinding
 import com.example.fera_lite.sikuda.anggota.dashboard.DashboardAnggotaActivity
-import com.example.fera_lite.sikuda.keuangan.dashboard.DashboardKeuanganActivity
-import com.example.fera_lite.sikuda.pemilik.dashboard.DashboardPemilikActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
+// Halaman Login (AuthActivity pada materi)
+// Fokus: hanya role Admin Keanggotaan (role keuangan & pemilik tidak dilanjutkan)
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -19,6 +20,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // [MATERI P6 - SHAREDPREFERENCES] Langkah 1:
+        // Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        // [MATERI P6 - SPLASH SCREEN] Langkah 4:
+        // Pengecekan isLogin (if isLogin -> MainActivity) sudah DIPINDAHKAN
+        // ke SplashScreenActivity, jadi di sini tidak dicek lagi.
 
         // Toolbar + tombol back
         setSupportActionBar(binding.toolbar)
@@ -31,50 +40,54 @@ class LoginActivity : AppCompatActivity() {
 
         // Ketuk akun percobaan untuk mengisi username & password otomatis
         binding.chipAnggota.setOnClickListener { isiAkun("anggota") }
-        binding.chipKeuangan.setOnClickListener { isiAkun("keuangan") }
-        binding.chipPemilik.setOnClickListener { isiAkun("pemilik") }
 
         binding.btnLogin.setOnClickListener {
+            // (A) Ambil input dari EditText
             val username = binding.inputUsername.text.toString().trim()
             val password = binding.inputPassword.text.toString()
 
+            // (B) Cek input kosong
             if (username.isEmpty() || password.isEmpty()) {
                 Snackbar.make(binding.root, getString(R.string.login_kosong), Snackbar.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Akun sementara (belum terhubung ke database web)
-            val intent = when {
-                username == "anggota" && password == "123" ->
-                    Intent(this, DashboardAnggotaActivity::class.java).apply {
-                        putExtra("nama", "Siti Rahma")
-                        putExtra("role", "Admin Anggota")
-                    }
+            // (C) Cek kecocokan username & password (akun Admin Keanggotaan)
+            if (username == "anggota" && password == "123") {
 
-                username == "keuangan" && password == "123" ->
-                    Intent(this, DashboardKeuanganActivity::class.java).apply {
-                        putExtra("nama", "Rina Marlina")
-                        putExtra("role", "Admin Keuangan")
-                    }
+                // [MATERI P6 - SHAREDPREFERENCES] Langkah 2:
+                // Set isLogin menjadi true dan simpan username jika autentikasi berhasil
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", username)
+                editor.putString("nama", "Siti Rahma")
+                editor.putString("role", "Admin Anggota")
+                editor.apply()
 
-                username == "pemilik" && password == "123" ->
-                    Intent(this, DashboardPemilikActivity::class.java).apply {
-                        putExtra("nama", "Ketua KUD")
-                        putExtra("role", "Pemilik")
-                    }
-
-                else -> null
-            }
-
-            if (intent == null) {
-                binding.inputPassword.text.clear()
-                Snackbar.make(binding.root, getString(R.string.login_salah), Snackbar.LENGTH_LONG)
-                    .setAction(getString(R.string.tutup)) { }
-                    .show()
-            } else {
+                // (D) Pindah ke halaman utama (Dashboard Admin Anggota)
+                // CLEAR_TASK: Beranda & Login dihapus dari tumpukan halaman,
+                // jadi tombol back di Dashboard tidak kembali ke Login/Beranda
+                val intent = Intent(this, DashboardAnggotaActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
+                finish()
+            } else {
+                // (E) Gagal: kosongkan password & tampilkan AlertDialog
+                binding.inputPassword.text.clear()
+                tampilkanDialogGagal()
             }
         }
+    }
+
+    // [MATERI P6 - WARMING UP] Jika username/password salah -> AlertDialog "Silahkan coba lagi"
+    private fun tampilkanDialogGagal() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.login_gagal_judul))
+            .setMessage(getString(R.string.login_coba_lagi))
+            .setPositiveButton(getString(R.string.tutup)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
     private fun isiAkun(username: String) {
@@ -82,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
         binding.inputPassword.setText("123")
     }
 
-    // Tombol back di Toolbar
+    // Tombol back di Toolbar -> kembali ke Beranda (Guest)
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
