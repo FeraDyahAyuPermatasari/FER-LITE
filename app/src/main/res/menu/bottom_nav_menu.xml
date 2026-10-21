@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [MATERI P7 - BOTTOM NAVIGATION] Langkah 2: menu bottom navigation
+     5 menu sesuai studi kasus Admin Keanggotaan (Figma A1, A2, A4, A6, A7) -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/beranda"
+        android:icon="@drawable/ic_home"
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/daftar"
+        android:icon="@drawable/ic_user_plus"
+        android:title="Daftar" />
+
+    <item
+        android:id="@+id/verifikasi"
+        android:icon="@drawable/ic_check"
+        android:title="Verifikasi" />
+
+    <item
+        android:id="@+id/anggota"
+        android:icon="@drawable/ic_users"
+        android:title="Anggota" />
+
+    <item
+        android:id="@+id/simpanan"
+        android:icon="@drawable/ic_wallet"
+        android:title="Simpanan" />
+</menu>
