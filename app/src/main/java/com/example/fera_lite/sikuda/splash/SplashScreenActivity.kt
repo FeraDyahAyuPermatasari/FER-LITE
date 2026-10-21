@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.fera_lite.databinding.ActivitySplashScreenBinding
-import com.example.fera_lite.sikuda.anggota.dashboard.DashboardAnggotaActivity
+import com.example.fera_lite.sikuda.anggota.BaseActivity
 import com.example.fera_lite.sikuda.guest.beranda.MainActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -37,8 +37,9 @@ class SplashScreenActivity : AppCompatActivity() {
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             val intent = if (isLogin) {
-                // isLogin = true  -> langsung ke halaman utama (Dashboard Admin Anggota)
-                Intent(this@SplashScreenActivity, DashboardAnggotaActivity::class.java)
+                // isLogin = true  -> langsung ke halaman utama
+                // [MATERI P7] alur SplashScreen diarahkan ke BaseActivity (bottom navigation)
+                Intent(this@SplashScreenActivity, BaseActivity::class.java)
             } else {
                 // isLogin = false -> ke halaman Guest (Beranda) dulu,
                 // dari Beranda pengguna menekan "Masuk" untuk ke halaman Login

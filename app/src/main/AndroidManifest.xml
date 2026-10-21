@@ -55,8 +55,20 @@
             android:exported="false"
             android:theme="@style/Theme.Sikuda"
             android:windowSoftInputMode="adjustResize" />
+        <!-- [MATERI P7 - BOTTOM NAVIGATION] BaseActivity = activity utama Admin Keanggotaan
+             (menggantikan DashboardAnggotaActivity) -->
         <activity
-            android:name=".sikuda.anggota.dashboard.DashboardAnggotaActivity"
+            android:name=".sikuda.anggota.BaseActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".sikuda.anggota.pendaftaran.FormPendaftaranActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".sikuda.anggota.verifikasi.DetailVerifikasiActivity"
             android:exported="false"
             android:theme="@style/Theme.Sikuda" />
         <activity

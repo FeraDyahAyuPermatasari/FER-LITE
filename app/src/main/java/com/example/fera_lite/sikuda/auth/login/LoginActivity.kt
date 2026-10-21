@@ -6,7 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fera_lite.R
 import com.example.fera_lite.databinding.ActivityLoginBinding
-import com.example.fera_lite.sikuda.anggota.dashboard.DashboardAnggotaActivity
+import com.example.fera_lite.sikuda.anggota.BaseActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -64,10 +64,11 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("role", "Admin Anggota")
                 editor.apply()
 
-                // (D) Pindah ke halaman utama (Dashboard Admin Anggota)
+                // (D) Pindah ke halaman utama (BaseActivity + bottom navigation)
                 // CLEAR_TASK: Beranda & Login dihapus dari tumpukan halaman,
                 // jadi tombol back di Dashboard tidak kembali ke Login/Beranda
-                val intent = Intent(this, DashboardAnggotaActivity::class.java)
+                // [MATERI P7] alur AuthActivity (Login) diarahkan ke BaseActivity
+                val intent = Intent(this, BaseActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
