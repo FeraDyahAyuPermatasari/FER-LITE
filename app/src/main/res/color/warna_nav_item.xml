@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [MATERI P7 - BOTTOM NAVIGATION] warna ikon & teks item -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/putih" android:state_checked="true" />
+    <item android:color="@color/putih_80" />
+</selector>

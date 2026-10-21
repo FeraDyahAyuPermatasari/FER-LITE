@@ -77,4 +77,23 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/putih_80</item>
     </style>
+
+    <!-- [P7] Header foto: hanya sudut bawah yang membulat (Figma) -->
+    <style name="ShapeAppearance.Sikuda.HeaderBawah" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">28dp</item>
+        <item name="cornerSizeBottomRight">28dp</item>
+    </style>
+
+    <!-- [MATERI P7 - BOTTOM NAVIGATION] gaya label & indikator bottom navigation -->
+    <style name="TextAppearance.Sikuda.NavLabel" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Widget.Sikuda.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
 </resources>
