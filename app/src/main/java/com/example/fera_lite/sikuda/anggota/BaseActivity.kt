@@ -29,10 +29,11 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // [MATERI P7] systemBars.bottom diubah menjadi 0 agar tidak ada jarak di bawah navigasi
+        // [MATERI P7 - TATA LETAK] Beri ruang untuk status bar dan navigation bar HP,
+        // agar header dan BottomNavigation tidak tertutup sistem Android.
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 

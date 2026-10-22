@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        android:paddingBottom="90dp"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="128dp"
                 app:cardBackgroundColor="@color/hijau_tua"
                 app:cardElevation="0dp"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Sikuda.HeaderBawah"
@@ -48,7 +48,7 @@
                     android:orientation="vertical"
                     android:paddingHorizontal="20dp"
                     android:paddingTop="14dp"
-                    android:paddingBottom="64dp">
+                    android:paddingBottom="12dp">
                     <!-- [MATERI P7 - FRAGMENT] Toolbar di setiap fragment -->
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"
@@ -125,7 +125,7 @@
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp">
                 <LinearLayout
-                    android:layout_marginTop="-48dp"
+                    android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
