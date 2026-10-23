@@ -88,6 +88,25 @@
             android:name=".sikuda.web.WebViewActivity"
             android:exported="false"
             android:theme="@style/Theme.Sikuda" />
+
+        <!-- [QUIZ P8] Halaman Input Email Gmail -->
+        <activity
+            android:name=".sikuda.auth.register.EmailGmailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda" />
+
+        <!-- [QUIZ P8] Halaman Registrasi Akun -->
+        <activity
+            android:name=".sikuda.auth.register.RegistrasiActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda" />
+
+        <!-- [QUIZ P8] Halaman Registrasi Berhasil -->
+        <activity
+            android:name=".sikuda.auth.register.RegistrasiBerhasilActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda" />
+
     </application>
 
 </manifest>

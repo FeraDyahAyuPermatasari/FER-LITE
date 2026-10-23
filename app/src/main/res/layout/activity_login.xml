@@ -242,6 +242,18 @@
                             app:icon="@drawable/ic_login"
                             app:iconGravity="textStart"
                             android:layout_marginTop="10dp" />
+
+                        <!-- [QUIZ P8] Tombol baru tanpa mengubah Login lama -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnRegisterGmail"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Register With Gmail"
+                            android:textAllCaps="false"
+                            android:textColor="@color/hijau_sawit"
+                            app:strokeColor="@color/hijau_sawit" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

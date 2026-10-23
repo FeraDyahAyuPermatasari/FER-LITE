@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fera_lite.R
 import com.example.fera_lite.databinding.ActivityLoginBinding
 import com.example.fera_lite.sikuda.anggota.BaseActivity
+import com.example.fera_lite.sikuda.auth.register.EmailGmailActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -41,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
         // Ketuk akun percobaan untuk mengisi username & password otomatis
         binding.chipAnggota.setOnClickListener { isiAkun("anggota") }
 
+        // [QUIZ P8 - SOAL 1] Tombol Register With Gmail.
+        binding.btnRegisterGmail.setOnClickListener {
+            startActivity(Intent(this, EmailGmailActivity::class.java))
+        }
+
         binding.btnLogin.setOnClickListener {
             // (A) Ambil input dari EditText
             val username = binding.inputUsername.text.toString().trim()
@@ -52,15 +58,30 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // (C) Cek kecocokan username & password (akun Admin Keanggotaan)
-            if (username == "anggota" && password == "123") {
+            // [QUIZ P8 - SOAL 2] Memeriksa akun lama serta data registrasi.
+            val akunPref = getSharedPreferences("registrasi_pref", MODE_PRIVATE)
+            val cocokAkunBaru = username == akunPref.getString("username", "") &&
+                password == akunPref.getString("password", "") &&
+                akunPref.getBoolean("terdaftar", false)
+            val cocokUsernamePassword = username == password
+            val cocokAkunLama = username == "anggota" && password == "123"
+
+            if (cocokAkunLama || cocokUsernamePassword || cocokAkunBaru) {
 
                 // [MATERI P6 - SHAREDPREFERENCES] Langkah 2:
                 // Set isLogin menjadi true dan simpan username jika autentikasi berhasil
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
-                editor.putString("nama", "Siti Rahma")
+                // Nama hasil registrasi hanya dipakai ketika akun tersebut yang login.
+                val namaPengguna = if (cocokAkunBaru) {
+                    akunPref.getString("nama", username) ?: username
+                } else if (cocokAkunLama) {
+                    "Siti Rahma"
+                } else {
+                    username
+                }
+                editor.putString("nama", namaPengguna)
                 editor.putString("role", "Admin Anggota")
                 editor.apply()
 
