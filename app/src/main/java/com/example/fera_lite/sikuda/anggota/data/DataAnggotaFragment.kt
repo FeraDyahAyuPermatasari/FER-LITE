@@ -1,6 +1,8 @@
 package com.example.fera_lite.sikuda.anggota.data
 
 import android.os.Bundle
+import android.content.Intent
+import com.example.fera_lite.sikuda.anggota.database.DaftarRoomActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,6 +49,13 @@ class DataAnggotaFragment : Fragment() {
             (requireActivity() as BaseActivity).replaceFragment(TrackingFragment())
         }
         binding.fabAnggotaLama.setOnClickListener { fiturSegera("Input anggota lama") }
+        // ===== [FITUR BARU 1 - ROOM] TAHAN TOMBOL ANGGOTA LAMA UNTUK MELIHAT DATABASE =====
+        // Click biasa tetap sama, sehingga fungsi lama tidak dihapus.
+        binding.fabAnggotaLama.setOnLongClickListener {
+            startActivity(Intent(requireContext(), DaftarRoomActivity::class.java))
+            true
+        }
+        // ===== [AKHIR FITUR BARU 1] =====
         binding.btnUnduh.setOnClickListener { fiturSegera("Unduh data anggota") }
     }
 

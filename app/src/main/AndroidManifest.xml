@@ -107,6 +107,14 @@
             android:exported="false"
             android:theme="@style/Theme.Sikuda" />
 
+        <!-- ===== [FITUR BARU 1 - ROOM] HALAMAN DATA ANGGOTA TERSIMPAN ===== -->
+        <activity
+            android:name=".sikuda.anggota.database.DaftarRoomActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sikuda" />
+        <!-- ===== [AKHIR FITUR BARU 1] ===== -->
+            <!-- [PERBAIKAN FITUR 1] Detail verifikasi data Room -->
+        <activity android:name=".sikuda.anggota.verifikasi.DetailRoomVerifikasiActivity" android:exported="false" />
     </application>
 
 </manifest>

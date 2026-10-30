@@ -11,6 +11,8 @@ import com.example.fera_lite.R
 import com.example.fera_lite.databinding.FragmentPendaftaranBinding
 import com.example.fera_lite.sikuda.anggota.BaseActivity
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.example.fera_lite.sikuda.anggota.database.DaftarRoomActivity
 
 // [MATERI P7 - FRAGMENT] A2 · Pendaftaran Anggota (menu Daftar)
 class PendaftaranFragment : Fragment() {
@@ -45,7 +47,17 @@ class PendaftaranFragment : Fragment() {
         // Tombol "Daftar Anggota" -> Form Pendaftaran (A3)
         binding.fabDaftar.setOnClickListener {
             // [MATERI P7] Intent di fragment: this -> requireContext()
-            startActivity(Intent(requireContext(), FormPendaftaranActivity::class.java))
+            // ===== [FITUR BARU 1 - ROOM] PILIH FORM ATAU LIHAT DATA TERSIMPAN =====
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Pendaftaran Anggota")
+                .setItems(arrayOf("Daftarkan anggota baru", "Lihat database anggota")) { _, pilihan ->
+                    if (pilihan == 0) {
+                        startActivity(Intent(requireContext(), FormPendaftaranActivity::class.java))
+                    } else {
+                        startActivity(Intent(requireContext(), DaftarRoomActivity::class.java))
+                    }
+                }.show()
+            // ===== [AKHIR FITUR BARU 1] =====
         }
         binding.btnFilter.setOnClickListener { fiturSegera("Filter") }
     }

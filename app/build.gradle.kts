@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    // ===== [FITUR BARU 1 - ROOM] KSP UNTUK MEMBUAT KODE DATABASE OTOMATIS =====
+    id("com.google.devtools.ksp") version "2.3.10"
+    // ===== [AKHIR FITUR BARU 1] =====
 }
 
 android {
@@ -36,6 +39,10 @@ android {
 }
 
 dependencies {
+    // ===== [FITUR BARU 1 - ROOM] DEPENDENSI ROOM 2.8.5 =====
+    implementation("androidx.room:room-runtime:2.8.5")
+    ksp("androidx.room:room-compiler:2.8.5")
+    // ===== [AKHIR FITUR BARU 1] =====
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
